@@ -18,12 +18,14 @@ querySnapshot.forEach((doc) => {
 
 
 function showList(docData) {
+  const time = docData.date.toDate().toLocaleString();
   const html = `
     <div class="product">
       <img src="${docData.imgUrl}" alt="${docData.title}" />
       <div class="text">
         <h3 class="title">${docData.title}</h3>
         <p class="price">${docData.price}원</p>
+        <p class="date">${time}</p>
       </div>
     </div>
   `
