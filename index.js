@@ -1,6 +1,4 @@
 import { 
-  app, 
-  getDatabase, 
   getDocs,
   collection, 
   query, 
@@ -9,7 +7,6 @@ import {
 } from './firebase.js';
 
 // Get a reference to the database service
-
 const colRef = collection(db, "products");
 // const q = query(colRef, where("title", "==", "새"));
 
@@ -21,8 +18,12 @@ querySnapshot.forEach((doc) => {
 
 
 function showList(docData) {
-  const title = docData.title;
-  const p = document.createElement('p');
-  p.innerHTML = title;
-  document.body.appendChild(p)
+  const html = `
+    <div class="product">
+      <h3 class="title">${docData.title}</h3>
+      <p class="price">${docData.price}원</p>
+    </div>
+  `
+  const products = document.querySelector('.products');
+  products.innerHTML += html;
 }
