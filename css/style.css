@@ -1,0 +1,19 @@
+.products {
+  width: 100%;
+  outline: 1px solid #ccc;
+}
+
+.product {
+  display: flex;
+  padding: 1em;
+}
+.product img {
+  width: 200px;
+}
+
+.product .text {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding-left: 40px;
+}

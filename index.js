@@ -20,8 +20,11 @@ querySnapshot.forEach((doc) => {
 function showList(docData) {
   const html = `
     <div class="product">
-      <h3 class="title">${docData.title}</h3>
-      <p class="price">${docData.price}원</p>
+      <img src="${docData.imgUrl}" alt="${docData.title}" />
+      <div class="text">
+        <h3 class="title">${docData.title}</h3>
+        <p class="price">${docData.price}원</p>
+      </div>
     </div>
   `
   const products = document.querySelector('.products');
