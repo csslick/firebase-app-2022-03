@@ -4,3 +4,4 @@
 2. DB, Collection 추가
 3. DB 읽기 - 제품 표시 페이지(index.html)
 4. DB 쓰기 - 올리기 페이지(upload.html)
+5. 이미지 업로드 및 참조URL
