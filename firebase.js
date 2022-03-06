@@ -1,5 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword, 
+  updateProfile
+} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 import { 
   collection, 
   addDoc, 
@@ -36,5 +40,5 @@ export {
   ref,
   uploadBytes,
   getDownloadURL,
-  getAuth, createUserWithEmailAndPassword
+  getAuth, createUserWithEmailAndPassword, updateProfile
 }

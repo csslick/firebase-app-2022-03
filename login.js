@@ -2,7 +2,8 @@ import {
   db, 
   storage,
   getAuth, 
-  createUserWithEmailAndPassword 
+  createUserWithEmailAndPassword,
+  updateProfile
 } from './firebase.js';
 
   // 회원가입
@@ -18,10 +19,17 @@ import {
       .then((userCredential) => {
         // 가입 후 유저정보 반환됨 - uid 확인
         const user = userCredential.user;
-        user.displayName = name;  // user name
         console.log(user)
+        updateProfile(auth.currentUser, {
+          displayName: name, 
+          photoURL: "https://blog.kakaocdn.net/dn/wn8ds/btq5u4RsTuG/7KMKUbqv3CLSbdigBxxnJ0/img.png"
+        }).then(() => {
+          console.log('Profile updated!');
+        }).catch((err) => {
+          console.log('profile update error');
+        });
       })
       .catch((err) => {
-        console.log(err)
+        console.log('무슨에러? ', err)
       });
   })
