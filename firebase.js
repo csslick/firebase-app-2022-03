@@ -2,7 +2,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase
 import { 
   getAuth, 
   createUserWithEmailAndPassword, 
-  updateProfile
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 import { 
   collection, 
@@ -40,5 +43,7 @@ export {
   ref,
   uploadBytes,
   getDownloadURL,
-  getAuth, createUserWithEmailAndPassword, updateProfile
+  getAuth, createUserWithEmailAndPassword, updateProfile,
+  signInWithEmailAndPassword, signOut,
+  onAuthStateChanged
 }

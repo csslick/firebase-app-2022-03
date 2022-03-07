@@ -4,7 +4,12 @@ import {
   query, 
   where,
   db,
+  getAuth,
+  signOut
 } from './firebase.js';
+import { Nav } from './nav.js';
+
+document.querySelector('.nav-component').innerHTML = Nav();
 
 // Get a reference to the database service
 const colRef = collection(db, "products");
@@ -32,3 +37,14 @@ function showList(docData) {
   const products = document.querySelector('.products');
   products.innerHTML += html;
 }
+
+// 로그아웃
+logout.addEventListener('click', () => {
+  const auth = getAuth();
+  signOut(auth).then(() => {
+    console.log('로그아웃 성공');
+    location.href = './index.html';
+  }).catch((err) => {
+    console.log('로그아웃 에러');
+  });
+})

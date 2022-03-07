@@ -9,15 +9,31 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="container">
+  <!-- <nav class="container">
     <ul>
       <li><a href="./index.html">글 목록</a></li>
       <li><a href="./upload.html">글 올리기</a></li>
       <li><a href="./login.html">로그인</a></li>
+      <li><button id="logout">로그아웃</button></li>
     </ul>
-  </nav>
+  </nav> -->
+  <div class="nav-component"></div>
+
   <section class="container">
-    <h1>로그인/회원가입</h1>
+    <h2>로그인</h2>
+    <form class="mt-3">
+      <div class="mb-3">
+        <input type="email" class="form-control" placeholder="email" id="email">
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" placeholder="pw" id="pwd">
+      </div>
+      <button type="submit" class="btn btn-primary" id="login">로그인</button>
+   </form>
+  </section>
+
+  <section class="container">
+    <h2>회원가입</h2>
     <form class="mt-3">
       <div class="mb-3">
         <input type="text" class="form-control" placeholder="name" id="newName">
@@ -33,6 +49,6 @@
   </section>
 
   <script type="module" src="login.js"></script>
-
+  <!-- <script type="module" src="./authStatus.js"></script> -->
 </body>
 </html>

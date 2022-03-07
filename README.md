@@ -8,3 +8,9 @@
 6. 회원가입
   - 유저정보: uid 확인
   - displayName
+7. 로그아웃
+  - 로그인/로그아웃 상태 onAuthStateChanged
+  - DB 쓰기 권한(write) 설정 - 로그인 시에만 가능
+8. Nav 컴포넌트 & 접속상태 별 로그인/로그아웃 상태 - 메뉴 표시
+- todo 글 올리기는 로그인시에만
+- todo localStorage로 로그인 상태 저장하고 불러오기(최적화)

@@ -8,9 +8,9 @@ import {
   signOut,
   onAuthStateChanged
 } from './firebase.js';
-// import { Nav } from './nav.js';
+import { Nav } from './nav.js';
 
-// document.querySelector('.nav-component').innerHTML = Nav();
+document.querySelector('.nav-component').innerHTML = Nav();
 
 const register = document.getElementById('register');
 const login = document.getElementById('login');
@@ -22,12 +22,11 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
     console.log('로그인: ' + uid);
-    // document.querySelector('.user-name').textContent = user.displayName;
-    location.href = './index.html';
   } else {
     // User is signed out
     console.log('로그아웃상태')
   }
+  console.log('isUser = ' + isUser)
 });  
 
 // 로그인
@@ -50,14 +49,14 @@ login.addEventListener('click', (e) => {
 })  
 
 // 로그아웃
-// logout.addEventListener('click', () => {
-//   const auth = getAuth();
-//   signOut(auth).then(() => {
-//     console.log('로그아웃 성공');
-//   }).catch((err) => {
-//     console.log('로그아웃 에러');
-//   });
-// })
+logout.addEventListener('click', () => {
+  const auth = getAuth();
+  signOut(auth).then(() => {
+    console.log('로그아웃 성공');
+  }).catch((err) => {
+    console.log('로그아웃 에러');
+  });
+})
 
 // 회원가입
 register.addEventListener('click', (e) => {
