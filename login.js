@@ -22,7 +22,9 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
     console.log('로그인: ' + uid);
-    // document.querySelector('.user-name').textContent = user.displayName;
+    // 로컬스토리지에 로그인 유저정보 저장으로 빠른 유저정보 업데이트
+    localStorage.setItem('user', JSON.stringify(user));
+
     location.href = './index.html';
   } else {
     // User is signed out

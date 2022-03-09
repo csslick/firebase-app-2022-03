@@ -62,7 +62,7 @@ sendBtn.addEventListener("click", async (e) => {
         imgUrl: imgUrl,
       });
       console.log("Document written with ID: ", docRef.id);
-      window.location.href = './index.html'
+      location.href = './index.html'
     } catch(e) {
       console.log("서버 에러: ", e);
     }
@@ -71,3 +71,9 @@ sendBtn.addEventListener("click", async (e) => {
   uploadFile();
 
 }); // sendBtn
+
+const cancelBtn = document.getElementById('cancel');
+cancelBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  location.href = './';
+})
