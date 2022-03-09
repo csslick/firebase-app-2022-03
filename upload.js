@@ -13,19 +13,7 @@ import {
 import { Nav } from './nav.js' ;
 
 document.querySelector('.nav-component').innerHTML = Nav();
-document.querySelector('nav ul').style.display = 'none';
-
-// 로그인 상태 확인
-// const auth = getAuth();
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     const uid = user.uid;
-//     console.log('로그인: ' + uid);
-//   } else {
-//     // User is signed out
-//     console.log('로그아웃상태')
-//   }
-// });  
+document.querySelector('#logout').style.display = 'none';
 
 const sendBtn = document.getElementById("send");
 
