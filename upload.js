@@ -42,7 +42,7 @@ sendBtn.addEventListener("click", async (e) => {
     
       // 접속한 user ID
       const uid = JSON.parse(localStorage.getItem('user')).uid;
-      console.log('userId = ' + uid)
+      console.log('userID = ' + uid)
       // 도큐먼트 쓰기
       const docRef = await addDoc(collection(db, "products"), {
         title: title.value,
