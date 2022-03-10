@@ -14,7 +14,6 @@ import { Nav } from './nav.js' ;
 
 document.querySelector('.nav-component').innerHTML = Nav();
 document.querySelector('#logout').style.display = 'none';
-
 const sendBtn = document.getElementById("send");
 
 sendBtn.addEventListener("click", async (e) => {
@@ -41,6 +40,9 @@ sendBtn.addEventListener("click", async (e) => {
         imgUrl = "images/no-image.jpg"; // 빈이미지
       }
     
+      // 접속한 user ID
+      const uid = JSON.parse(localStorage.getItem('user')).uid;
+      console.log('userId = ' + uid)
       // 도큐먼트 쓰기
       const docRef = await addDoc(collection(db, "products"), {
         title: title.value,
@@ -48,6 +50,7 @@ sendBtn.addEventListener("click", async (e) => {
         content: content.value,
         date: new Date(),
         imgUrl: imgUrl,
+        userId: uid
       });
       console.log("Document written with ID: ", docRef.id);
       location.href = './index.html'

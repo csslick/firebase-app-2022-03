@@ -12,8 +12,9 @@ import {
   addDoc, 
   query, 
   where, 
-  getDocs,
-  getFirestore
+  doc, getDocs, getDoc,
+  getFirestore,
+  deleteDoc
 } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js"
 
@@ -35,7 +36,7 @@ const storage = getStorage();
 export {
   collection,
   addDoc,
-  getDocs,
+  getDoc, getDocs, doc,
   query, 
   where,
   db,
@@ -45,5 +46,6 @@ export {
   getDownloadURL,
   getAuth, createUserWithEmailAndPassword, updateProfile,
   signInWithEmailAndPassword, signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  deleteDoc
 }
